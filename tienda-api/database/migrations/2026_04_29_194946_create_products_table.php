@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('stock')->default(0);
             $table->decimal('price', 10, 2);
             $table->boolean('is_active')->default(true);
-            $table->foreignId('categories_id')->constrained('categories'); // esto hace la relacion
+            //$table->foreignId('categories_id')->constrained('categories'); // esto hace la relacion
             $table->softDeletes();
             $table->timestamps();
         });

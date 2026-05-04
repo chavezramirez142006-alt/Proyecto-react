@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class CategoryResources extends JsonResource
 {
     /**
-     * Transform the resource into an array.
+     * Trasform the resource into an array.
      *
      * @return array<string, mixed>
      */
