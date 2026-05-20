@@ -1,77 +1,77 @@
-import logo from './assets/icono_M.png';
-const Navbar = () => {
-    return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
-    <div className="container">
-        
+import iconoM from '../assets/icono_M.png';
+const Navbar = ({ setVista }) => { 
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm mb-4">
+      <div className="container">
+          
         {/* Logo / título */}
         <a className="navbar-brand d-flex align-items-center" href="#">
-        <div className="logo-circle me-3">
-            <i className="fas fa-user-graduate"></i>
-        </div>
+            <div className="logo-circle me-3">
+                <img src={iconoM} alt="Logo Matrícula" className="logo-img" />
+            </div>
 
-        <div>
-            <h5 className="mb-0 fw-bold text-white">MATRÍCULA PRO</h5>
-            <small className="text-light">Sistema Académico</small>
-        </div>
+          <div>
+              <h5 className="mb-0 fw-bold text-white">MATRÍCULA PRO</h5>
+              <small className="text-light">Sistema Académico</small>
+          </div>
         </a>
 
         {/* Botón móvil 3 puntos */}
         <button
-        className="btn text-white d-lg-none border-0"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarMenu"
-        aria-controls="navbarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        >
-        <i className="fas fa-ellipsis-v fs-4"></i>
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Menú */}
         <div className="collapse navbar-collapse" id="navbarMenu">
-        <ul className="navbar-nav mx-auto">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-            <a className="nav-link active fw-semibold" href="#">
+              <button className="nav-link btn btn-link text-white" onClick={() => setVista("inicio")}>
                 <i className="fas fa-home me-1"></i> Inicio
-            </a>
+              </button>
             </li>
 
             <li className="nav-item">
-            <a className="nav-link fw-semibold" href="#">
+              <button className="nav-link btn btn-link text-white" onClick={() => setVista("cursos")}>
                 <i className="fas fa-book me-1"></i> Cursos
-            </a>
+              </button>
             </li>
 
             <li className="nav-item">
-            <a className="nav-link fw-semibold" href="#">
+              <button className="nav-link btn btn-link text-white" onClick={() => setVista("especializaciones")}>
                 <i className="fas fa-users me-1"></i> Especializaciones
-            </a>
+              </button>
             </li>
 
             <li className="nav-item">
-            <a className="nav-link fw-semibold" href="#">
+              <button className="nav-link btn btn-link text-white" onClick={() => setVista("contactos")}>
                 <i className="fas fa-address-book me-1"></i> Contactos
-            </a>
+              </button>
             </li>
 
             <li className="nav-item">
-            <a className="nav-link fw-semibold" href="#">
+              <button className="nav-link btn btn-link text-white" onClick={() => setVista("login")}>
                 <i className="fas fa-user me-1"></i> Login
-            </a>
+              </button>
             </li>
-        </ul>
+          </ul>
 
-        {/* Botón cerrar sesión */}
-        <button className="btn btn-outline-light btn-sm mt-2 mt-lg-0">
+          {/* Botón cerrar sesión */}
+          <button className="btn btn-outline-light btn-sm mt-2 mt-lg-0">
             <i className="fas fa-sign-out-alt me-1"></i>
             Cerrar Sesión
-        </button>
+          </button>
         </div>
-    </div>
+      </div>
     </nav>
-      );
-    };
-    
-    export default Navbar;
+  );
+};
+
+export default Navbar;

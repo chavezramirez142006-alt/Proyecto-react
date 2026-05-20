@@ -1,3 +1,5 @@
+/* Estilos personalizados para la aplicación */
+/*css de el logo y navbar*/
 .logo-circle {
     width: 50px;
     height: 50px;
@@ -23,3 +25,50 @@
     font-size: 0.75rem;
     opacity: 0.9;
   }
+
+.logo-img {
+  width: 150%;       /* se ajusta dentro del círculo */
+  height: 160%;
+  object-fit: contain;
+  border-radius: 50%; /* opcional, si quieres que se redondee */
+}
+
+  .custom-navbar {
+  background-color: #0a1d3a; /* Azul muy oscuro */
+}
+
+/* Estilo para el fondo de la aplicación */
+.app-background {
+  min-height: 100vh; /* ocupa toda la pantalla */
+  background-color: #b9d4fd; /* color de fondo */
+  background-image: none; /* opcional si solo color */
+}
+
+/* Efecto hover para el botón del menú en pantallas movil */
+.navbar-toggler:hover {
+  background-color: rgba(0, 183, 255, 0.2);
+}
+
+/* Estilos contenedor de alumnos*/
+.alumno-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.alumno-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 0.5em 0.7em;
+}
+
+/*login*/
+.login-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

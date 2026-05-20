@@ -1,25 +1,43 @@
 // src/components/AlumnoCard.jsx 
-const AlumnoCard = ({ nombre, carrera, estado }) => { 
-    // Lógica simple para cambiar el color del badge según el estado 
-    const badgeColor = estado === 'Matriculado' ? 'bg-success' : 'bg-secondary'; 
-    return ( 
-        <div className="col-md-4 mb-3"> 
-            <div className="card shadow-sm h-100"> 
-                <div className="card-body"> 
-                    <h5 className="card-title text-primary">{nombre}</h5> 
-                    <h6 className="card-subtitle mb-2 text-muted">{carrera}</h6> 
-                        <div className="d-flex justify-content-between align-items
-                        center"> 
-                        <span className={`badge ${badgeColor}`}>{estado}</span> 
-                        <div> 
-                            <button className="btn btn-sm btn-outline-warning me
-                            2">Editar</button> 
-                            <button className="btn btn-outline-danger">Eliminar</button> 
-                        </div> 
-                    </div> 
-                </div> 
-            </div> 
-        </div> 
-    ); 
-}; 
-  export default AlumnoCard;
+import { useState } from 'react';
+import llamafo from '../assets/llamafo.jpg';
+
+
+const AlumnoCard = ({ nombre, carrera, estado: estadoInicial,  }) =>{
+  
+  const [estado, setEstado] = useState(estadoInicial);
+ 
+  const badgeColor = estado === "Matriculado" ? "success" : "secondary";
+
+  const cambiarEstado = () => {
+    if (estado === "Matriculado") {
+      setEstado("Inactivo");
+    }else {
+      setEstado("Matriculado");
+    }
+  }
+      
+  return (
+    <div className="col-md-4 mb-4">
+      <div className="card shadow-sm border-0 alumno-card h-100">
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title">{nombre}</h5>
+          <img 
+            src={llamafo}
+            alt="Alumno"
+            className="img-fluid rounded mb-3"
+          />
+          <p className="card-text mb-1"><strong></strong> {carrera}</p>
+          <p className={`mb-3 badge bg-${badgeColor}`}>{estado}</p>
+          <div className="mt-auto d-flex justify-content-between">
+          <button className="btn btn-outline-info" onClick={cambiarEstado} >Cambiar estado</button>
+            <button className="btn btn-sm btn-outline-warning me2" >Editar</button>
+            <button className="btn btn-outline-danger" >Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AlumnoCard;
